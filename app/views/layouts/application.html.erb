@@ -10,9 +10,14 @@
 
   <body>
 
-  	<%= nav_bar brand: "quebra galho", responsive: true do %>
+  	<%= nav_bar brand: "Quebra Galho", responsive: true do %>
   	
- 
+ 	<%= menu_group do %>
+ 		<%= menu_item "Ferramenta", ferramenta_path %>
+        <%= menu_item "Habilidade", habilidades_path %>
+        <%= menu_item "Categoria", categoria_path %>
+    <% end %>
+
   	<% end %>
     <%= yield %>
   </body>

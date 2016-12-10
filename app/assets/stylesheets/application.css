@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background-image: url("quebragalho-logo.jpg") !important;
+	padding-top: 300px;
+	color: #f1870d;
+}
+
+table, a{
+	color: #fff;
+}
