@@ -26,7 +26,8 @@ table, a, a:hover, a:focus{
 	color: #fff;
 }
 
-body > a, body > a:hover, body > a:focus{
+body > a, body > a:hover, body > a:focus,
+table a, table a:hover, table a:focus{
  color: #fff !important;	
 }
 
