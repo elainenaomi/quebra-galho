@@ -15,11 +15,21 @@
  */
 
 body {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 	background-image: url("quebragalho-logo.jpg") !important;
 	padding-top: 300px;
 	color: #f1870d;
 }
 
-table, a{
+table, a, a:hover, a:focus{
 	color: #fff;
+}
+
+body > a, body > a:hover, body > a:focus{
+ color: #fff !important;	
+}
+
+a:hover, a:focus {
+	background-color: #f1870d;
 }

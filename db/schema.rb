@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20161210180002) do
   create_table "habilidades", force: :cascade do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.string   "categoria"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "categoria_id"
