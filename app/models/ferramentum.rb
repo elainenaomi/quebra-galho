@@ -1,0 +1,2 @@
+class Ferramentum < ApplicationRecord
+end
