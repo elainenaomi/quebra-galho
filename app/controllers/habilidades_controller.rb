@@ -10,27 +10,32 @@ class HabilidadesController < ApplicationController
   # GET /habilidades/1
   # GET /habilidades/1.json
   def show
+    @categorias = Categorium.all
   end
 
   # GET /habilidades/new
   def new
     @habilidade = Habilidade.new
+    @categorias = Categorium.all
   end
 
   # GET /habilidades/1/edit
   def edit
+    @categorias = Categorium.all
   end
 
   # POST /habilidades
   # POST /habilidades.json
   def create
     @habilidade = Habilidade.new(habilidade_params)
+    
 
     respond_to do |format|
       if @habilidade.save
         format.html { redirect_to @habilidade, notice: 'Habilidade was successfully created.' }
         format.json { render :show, status: :created, location: @habilidade }
       else
+        @categorias = Categorium.all
         format.html { render :new }
         format.json { render json: @habilidade.errors, status: :unprocessable_entity }
       end

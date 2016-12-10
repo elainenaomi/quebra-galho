@@ -21,11 +21,10 @@
     <%= f.text_area :descricao %>
   </div>
 
-  <div class="field">
-    <%= f.label :categoria %>
-    <%= f.text_field :categoria %>
-  </div>
 
+
+  <%=f.select :categoria_id, @categorias.map { |c| [c.nome, c.id]}%>
+  <%#=@categorias%>
   <div class="actions">
     <%= f.submit %>
   </div>
