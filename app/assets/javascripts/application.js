@@ -12,10 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-
-
-
+//= require materialize
 
 //= require turbolinks
 //= require_tree .
