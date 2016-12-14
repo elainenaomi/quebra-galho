@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+
+
  */
+
 
 body {
 	background-repeat: no-repeat;
@@ -28,7 +31,7 @@ table, a, a:hover, a:focus{
 
 body > a, body > a:hover, body > a:focus,
 table a, table a:hover, table a:focus{
- color: #fff !important;	
+ color: #fff !important;
 }
 
 a:hover, a:focus {
