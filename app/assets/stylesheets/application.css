@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+
+
  */
+ 
 
 body {
 	background-image: url("quebragalho-logo.jpg") !important;
