@@ -10,25 +10,20 @@
 
   <body>
 
-  	<%= nav_bar brand: "Quebra Galho", responsive: true do %>
-
-
-
- 	<%= menu_group do %>
- 		<%= menu_item "Ferramenta", ferramenta_path %>
-    <%= menu_item "Habilidade", habilidades_path %>
-    <%= menu_item "Categoria", categoria_path %>
-
-    <% end %>
-
-  	<% end %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo center  ">Buscar Quebra Galho</a>
+        <ul id="nav-mobile" class="center hide-on-med-and-down">
+          <li><%= link_to 'Habilidade', habilidades_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Categoria', categoria_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Ferramenta', ferramenta_path,{class:" font_nav"} %></li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
-
-
-
-     <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-
   </body>
+
+
 
 <script>
       function initMap() {
