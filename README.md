@@ -2,6 +2,7 @@
 
 # Comandos para verificar a versão do rails e do ruby:
 `ruby -v`
+
 `rails -v`
 
 # Internacionalização
