@@ -27,7 +27,7 @@
 
   </div>
   <div class="field">
-    <%= f.collection_select :categoria_id, Categoria.all, :id, :nome, prompt: true %>
+    <%= f.collection_select :categoria_id, Categoria.all, :id, :nome, {prompt: true}, {class: "browser-default"} %>
   </div>
   <div class="actions">
     <%= f.submit %>
