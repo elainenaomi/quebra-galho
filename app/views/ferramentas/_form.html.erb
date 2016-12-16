@@ -1,0 +1,35 @@
+<%= form_for(ferramenta) do |f| %>
+  <% if ferramenta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ferramenta.errors.count, "error") %> prohibited this ferramenta from being saved:</h2>
+
+      <ul>
+      <% ferramenta.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descricao %>
+    <%= f.text_area :descricao %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :disponibilidade %> <!-- Para usar o materialize, o label precisa vir abaixo do checkbox -->
+    <%= f.label :disponibilidade, id: :disponibilidade %>
+
+  </div>
+  <div class="field">
+    <%= f.collection_select :categoria_id, Categoria.all, :id, :nome, prompt: true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

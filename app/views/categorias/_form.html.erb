@@ -1,10 +1,10 @@
-<%= form_for(ferramentum) do |f| %>
-  <% if ferramentum.errors.any? %>
+<%= form_for(categoria) do |f| %>
+  <% if categoria.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(ferramentum.errors.count, "error") %> prohibited this ferramentum from being saved:</h2>
+      <h2><%= pluralize(categoria.errors.count, "error") %> prohibited this categoria from being saved:</h2>
 
       <ul>
-      <% ferramentum.errors.full_messages.each do |message| %>
+      <% categoria.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,11 +19,6 @@
   <div class="field">
     <%= f.label :descricao %>
     <%= f.text_area :descricao %>
-  </div>
-
-  <div class="field">
-    <%= f.label :disponibilidade %>
-    <%= f.check_box :disponibilidade %>
   </div>
 
   <div class="actions">

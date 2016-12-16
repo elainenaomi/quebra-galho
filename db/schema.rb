@@ -12,28 +12,28 @@
 
 ActiveRecord::Schema.define(version: 20161210180002) do
 
-  create_table "categoria", force: :cascade do |t|
+  create_table "categorias", force: :cascade do |t|
     t.string   "nome"
     t.text     "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ferramenta", force: :cascade do |t|
+  create_table "ferramentas", force: :cascade do |t|
     t.string   "nome"
     t.text     "descricao"
     t.boolean  "disponibilidade"
+    t.integer  "categoria_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["categoria_id"], name: "index_ferramentas_on_categoria_id"
   end
 
   create_table "habilidades", force: :cascade do |t|
     t.string   "nome"
     t.text     "descricao"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "categoria_id"
-    t.index ["categoria_id"], name: "index_habilidades_on_categoria_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "usuarios", force: :cascade do |t|
