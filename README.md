@@ -1,11 +1,11 @@
 # Passo a passo para configurar a nossa aplicação :)
 
-# Comandos para verificar a versão do rails e do ruby:
+## Comandos para verificar a versão do rails e do ruby:
 `ruby -v`
 
 `rails -v`
 
-# Internacionalização
+## Internacionalização
 Para usarmos o comando scaffold com os nomes dos módulos em português brasileiro
 (siiim, é para lembrarmos que é "pt-BR"), precisamos configurar o rails para esse idioma.
 
@@ -31,7 +31,7 @@ I18n.l Date.today, :format => :long
 se aparecer em português => SUCESSO!
 
 
-# Criando os módulos com o scaffold
+## Criando os módulos com o scaffold
 
 1. Módulo categoria:
 rails generate scaffold Categoria nome:string descricao:text
@@ -41,7 +41,7 @@ rails generate scaffold Ferramenta nome:string descricao:text disponibilidade:bo
 
 É necessário adicionar a referência `has_many: ferramentas` em categorias.
 
-# Configurando o banco de dados
+## Configurando o banco de dados
 Para executar uma migração:
 ```
 rails db:migrate
