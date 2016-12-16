@@ -38,6 +38,8 @@ rails generate scaffold Categoria nome:string descricao:text
 1. Módulo ferramenta:
 rails generate scaffold Ferramenta nome:string descricao:text disponibilidade:boolean categoria:references
 
+É necessário adicionar a referência `has_many: ferramentas` em categorias.
+
 # Configurando o banco de dados
 Para executar uma migração:
 ```
