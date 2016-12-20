@@ -25,7 +25,7 @@ class FerramentasController < ApplicationController
   # POST /ferramentas.json
   def create
     @ferramenta = Ferramenta.new(ferramenta_params)
-
+    @ferramenta.usuario_id = 1
     respond_to do |format|
       if @ferramenta.save
         format.html { redirect_to @ferramenta, notice: 'Ferramenta was successfully created.' }
@@ -69,6 +69,6 @@ class FerramentasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ferramenta_params
-      params.require(:ferramenta).permit(:nome, :descricao, :disponibilidade, :categoria_id)
+      params.require(:ferramenta).permit(:nome, :descricao, :disponibilidade, :categoria_id, :modelo, :marca, :tempo_de_uso)
     end
 end

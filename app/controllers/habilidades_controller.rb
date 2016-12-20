@@ -25,7 +25,7 @@ class HabilidadesController < ApplicationController
   # POST /habilidades.json
   def create
     @habilidade = Habilidade.new(habilidade_params)
-
+    @habilidade.usuario_id = 1
     respond_to do |format|
       if @habilidade.save
         format.html { redirect_to @habilidade, notice: 'Habilidade was successfully created.' }
@@ -69,6 +69,6 @@ class HabilidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def habilidade_params
-      params.require(:habilidade).permit(:nome, :usuario_id, :disponibilidade, :descricao, :possuo_ferramenta, :valor)
+      params.require(:habilidade).permit(:nome, :user_id, :disponibilidade, :descricao, :possuo_ferramenta, :valor)
     end
 end
