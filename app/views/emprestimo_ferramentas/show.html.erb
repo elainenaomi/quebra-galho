@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @emprestimo_ferramenta.usuario %>
+</p>
+
+<p>
+  <strong>Ferramenta:</strong>
+  <%= @emprestimo_ferramenta.ferramenta %>
+</p>
+
+<%= link_to 'Edit', edit_emprestimo_ferramenta_path(@emprestimo_ferramenta) %> |
+<%= link_to 'Back', emprestimo_ferramentas_path %>

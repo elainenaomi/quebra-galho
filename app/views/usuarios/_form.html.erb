@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nome %>
-    <%= f.text_area :nome %>
+    <%= f.label :nome_completo %>
+    <%= f.text_area :nome_completo %>
   </div>
 
   <div class="field">
@@ -24,6 +24,16 @@
   <div class="field">
     <%= f.label :email %>
     <%= f.text_area :email %>
+  </div>
+
+  <div class="field col l6 s6">
+    <%= f.label :password %>
+    <%= f.password_field :password, :minlength=>3, :maxlength =>20, :length =>20, :required =>true %>
+  </div>
+
+  <div class="field col l6 s6">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, :minlength=>3, :maxlength =>20, :required =>true %>
   </div>
 
   <div class="field">

@@ -1,0 +1,1 @@
+json.array! @emprestimo_habilidades, partial: 'emprestimo_habilidades/emprestimo_habilidade', as: :emprestimo_habilidade

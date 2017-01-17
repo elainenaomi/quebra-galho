@@ -1,10 +1,12 @@
 class HabilidadesController < ApplicationController
+  before_action :verify_user_login
   before_action :set_habilidade, only: [:show, :edit, :update, :destroy]
 
   # GET /habilidades
   # GET /habilidades.json
   def index
-    @habilidades = Habilidade.all
+    @criadas = logged_user.habilidades
+    @solicitei = EmprestimoHabilidade.select{|e| e.usuario_id == logged_user.id}.map{|e| e.habilidade}
   end
 
   # GET /habilidades/1
@@ -25,7 +27,7 @@ class HabilidadesController < ApplicationController
   # POST /habilidades.json
   def create
     @habilidade = Habilidade.new(habilidade_params)
-    @habilidade.usuario_id = 1
+    @habilidade.usuario_id = logged_user.id
     respond_to do |format|
       if @habilidade.save
         format.html { redirect_to @habilidade, notice: 'Habilidade was successfully created.' }
@@ -69,6 +71,6 @@ class HabilidadesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def habilidade_params
-      params.require(:habilidade).permit(:nome, :user_id, :disponibilidade, :descricao, :possuo_ferramenta, :valor)
+      params.require(:habilidade).permit(:nome, :disponibilidade, :descricao, :possuo_ferramenta, :valor, :categoria_id)
     end
 end

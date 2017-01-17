@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Nome</th>
+      <th>Nome Completo</th>
       <th>Login</th>
       <th>Email</th>
       <th>Tel</th>
@@ -19,7 +19,7 @@
   <tbody>
     <% @usuarios.each do |usuario| %>
       <tr>
-        <td><%= usuario.nome %></td>
+        <td><%= usuario.nome_completo %></td>
         <td><%= usuario.login %></td>
         <td><%= usuario.email %></td>
         <td><%= usuario.tel %></td>

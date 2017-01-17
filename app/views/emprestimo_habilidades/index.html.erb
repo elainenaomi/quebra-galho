@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emprestimo Habilidades</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Habilidade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emprestimo_habilidades.each do |emprestimo_habilidade| %>
+      <tr>
+        <td><%= emprestimo_habilidade.usuario %></td>
+        <td><%= emprestimo_habilidade.habilidade %></td>
+        <td><%= link_to 'Show', emprestimo_habilidade %></td>
+        <td><%= link_to 'Edit', edit_emprestimo_habilidade_path(emprestimo_habilidade) %></td>
+        <td><%= link_to 'Destroy', emprestimo_habilidade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Emprestimo Habilidade', new_emprestimo_habilidade_path %>

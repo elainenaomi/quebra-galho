@@ -36,6 +36,13 @@
     <%= f.label :disponibilidade, id: :disponibilidade %>
   </div>
 
+  <p>
+  <h6>Categoria:</h6>
+  <div class="field">
+    <%= f.collection_select :categoria_id, Categoria.all, :id, :nome, {prompt: true}, {class: "browser-default"} %>
+  </div>
+  <p>
+    
   <div class="actions">
     <%= f.submit %>
   </div>

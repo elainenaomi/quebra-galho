@@ -10,13 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219235215) do
+ActiveRecord::Schema.define(version: 20170117144736) do
 
   create_table "categorias", force: :cascade do |t|
     t.string   "nome"
     t.text     "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "emprestimo_ferramentas", force: :cascade do |t|
+    t.integer  "usuario_id"
+    t.integer  "ferramenta_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["ferramenta_id"], name: "index_emprestimo_ferramentas_on_ferramenta_id"
+    t.index ["usuario_id"], name: "index_emprestimo_ferramentas_on_usuario_id"
+  end
+
+  create_table "emprestimo_habilidades", force: :cascade do |t|
+    t.integer  "usuario_id"
+    t.integer  "habilidade_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["habilidade_id"], name: "index_emprestimo_habilidades_on_habilidade_id"
+    t.index ["usuario_id"], name: "index_emprestimo_habilidades_on_usuario_id"
   end
 
   create_table "ferramentas", force: :cascade do |t|
@@ -30,6 +48,7 @@ ActiveRecord::Schema.define(version: 20161219235215) do
     t.integer  "tempo_de_uso"
     t.text     "marca"
     t.integer  "usuario_id"
+    t.decimal  "valor"
     t.index ["categoria_id"], name: "index_ferramentas_on_categoria_id"
     t.index ["usuario_id"], name: "index_ferramentas_on_usuario_id"
   end
@@ -43,19 +62,22 @@ ActiveRecord::Schema.define(version: 20161219235215) do
     t.boolean  "possuo_ferramenta"
     t.decimal  "valor"
     t.integer  "usuario_id"
+    t.integer  "categoria_id"
+    t.index ["categoria_id"], name: "index_habilidades_on_categoria_id"
     t.index ["usuario_id"], name: "index_habilidades_on_usuario_id"
   end
 
   create_table "usuarios", force: :cascade do |t|
-    t.text     "nome"
+    t.text     "nome_completo"
     t.text     "login"
     t.text     "email"
     t.text     "tel"
     t.text     "cep"
     t.text     "cidade"
     t.text     "pais"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

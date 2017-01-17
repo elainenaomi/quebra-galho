@@ -1,4 +1,5 @@
 class CategoriasController < ApplicationController
+  before_action :verify_user_login
   before_action :set_categoria, only: [:show, :edit, :update, :destroy]
 
   # GET /categorias

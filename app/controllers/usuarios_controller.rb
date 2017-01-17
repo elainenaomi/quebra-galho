@@ -1,5 +1,11 @@
 class UsuariosController < ApplicationController
+  before_action :verify_user_login
+  before_action :verify_user_login, only: [:show, :edit, :update, :destroy]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+  before_action :verificar_usuario, only: [:show, :edit, :update, :destroy]
+  #before_action :save_login_state, :only => [:new, :create]
+  before_action :redirecione_para_home_se_estiver_logado, only: [:new, :create]
+
 
   # GET /usuarios
   # GET /usuarios.json
@@ -69,6 +75,16 @@ class UsuariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def usuario_params
-      params.require(:usuario).permit(:nome, :login, :email, :tel, :cep, :cidade, :pais)
+      params.require(:usuario).permit(:nome_completo, :login, :email, :tel, :cep, :cidade, :pais, :password, :password_confirmation)
     end
+
+    def verificar_usuario
+    unless @usuario.id == session[:usuario_id]
+      redirect_to '/home'
+    end
+  end
+
+  def redirecione_para_home_se_estiver_logado
+    redirect_to '/home' if logged_user
+  end
 end

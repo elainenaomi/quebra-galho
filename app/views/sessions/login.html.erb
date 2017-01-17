@@ -1,0 +1,18 @@
+
+<div class="row">
+  <h1 class="center">Quebra-Galho</h1>
+  <%= form_tag({:action => 'login_attempt'},id:'login') do %>
+    <%= content_tag :div, class:"col l4 offset-l4 s12" do%>
+      <%= label :login_ou_email, "Login or E-mail"%>
+      <%= text_field_tag :login_or_email%>
+      <%= label :login_password, "Password"%>
+      <%#= link_to "(forgot password)", new_password_reset_path %>
+      <%= password_field_tag :login_password, '', :maxlength =>20, :length =>20 %>
+      <% if flash[:error] %>
+        <div class="notice error"><b><%= flash[:error] %></b></div>
+      <% end %>
+      <%= submit_tag "Logar",class:"btn col l3 "%>
+      <%= link_to 'Cadastrar', 'cadastrar',class:" btn col l3 offset-l2 "%>
+    <%end%>
+  <%end%>
+</div>

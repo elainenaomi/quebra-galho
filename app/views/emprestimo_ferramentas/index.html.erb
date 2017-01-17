@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Emprestimo Ferramentas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Ferramenta</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @emprestimo_ferramentas.each do |emprestimo_ferramenta| %>
+      <tr>
+        <td><%= emprestimo_ferramenta.usuario %></td>
+        <td><%= emprestimo_ferramenta.ferramenta %></td>
+        <td><%= link_to 'Show', emprestimo_ferramenta %></td>
+        <td><%= link_to 'Edit', edit_emprestimo_ferramenta_path(emprestimo_ferramenta) %></td>
+        <td><%= link_to 'Destroy', emprestimo_ferramenta, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Emprestimo Ferramenta', new_emprestimo_ferramenta_path %>

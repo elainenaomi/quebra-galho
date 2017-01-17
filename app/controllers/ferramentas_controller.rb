@@ -1,10 +1,12 @@
 class FerramentasController < ApplicationController
+  before_action :verify_user_login
   before_action :set_ferramenta, only: [:show, :edit, :update, :destroy]
 
   # GET /ferramentas
   # GET /ferramentas.json
   def index
-    @ferramentas = Ferramenta.all
+    @criadas = logged_user.ferramentas
+    @solicitei = EmprestimoFerramenta.select{|e| e.usuario_id == logged_user.id}.map{|e| e.ferramenta}
   end
 
   # GET /ferramentas/1
@@ -25,7 +27,7 @@ class FerramentasController < ApplicationController
   # POST /ferramentas.json
   def create
     @ferramenta = Ferramenta.new(ferramenta_params)
-    @ferramenta.usuario_id = 1
+    @ferramenta.usuario_id = logged_user.id
     respond_to do |format|
       if @ferramenta.save
         format.html { redirect_to @ferramenta, notice: 'Ferramenta was successfully created.' }
@@ -69,6 +71,6 @@ class FerramentasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ferramenta_params
-      params.require(:ferramenta).permit(:nome, :descricao, :disponibilidade, :categoria_id, :modelo, :marca, :tempo_de_uso)
+      params.require(:ferramenta).permit(:nome, :valor, :descricao, :disponibilidade, :categoria_id, :modelo, :marca, :tempo_de_uso)
     end
 end

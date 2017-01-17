@@ -1,0 +1,1 @@
+json.partial! "emprestimo_habilidades/emprestimo_habilidade", emprestimo_habilidade: @emprestimo_habilidade

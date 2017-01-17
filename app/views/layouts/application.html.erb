@@ -3,7 +3,6 @@
   <head>
     <title>QuebraGalho</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,11 +11,16 @@
 
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center  ">Buscar Quebra Galho</a>
+        <a href="#" class="brand-logo center  ">Quebra Galho</a>
         <ul id="nav-mobile" class="center hide-on-med-and-down">
-          <li><%= link_to 'Habilidade', habilidades_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Buscar', root_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Meu QB', root_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Ferramentas', ferramentas_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Habilidades', habilidades_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Emprestimos Fer', emprestimo_ferramentas_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Emprestimos Hab', emprestimo_habilidades_path,{class:" font_nav"} %></li>
           <li><%= link_to 'Categoria', categorias_path,{class:" font_nav"} %></li>
-          <li><%= link_to 'Ferramenta', ferramentas_path,{class:" font_nav"} %></li>
+          <li><%= link_to 'Logout', logout_path,{class:" font_nav"} %></li>
         </ul>
       </div>
     </nav>
